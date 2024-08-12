@@ -24,7 +24,7 @@ Once the application is running, you can:
 - Add a new task: Enter the task text in the input field and click the "Add" button.
 - View all tasks: All added tasks will be displayed in the list.
 - Filter tasks: You can switch between viewing active and completed tasks.
-## ALSO:
+### Also:
 - there is validation for unique values and non-empty field
 - added blocking of delete completed button if there are no suitable tasks
 - added blocking of delete all button if there are no tasks
