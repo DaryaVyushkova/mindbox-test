@@ -1,5 +1,6 @@
 import React from 'react'
 import { Checkbox, Button } from 'antd'
+import { DeleteOutlined } from '@ant-design/icons'
 
 import { Todo } from 'Forms/TodoForm'
 
@@ -21,8 +22,8 @@ const TodoItem: React.FC<Todo> = ({ id, text, completed }) => {
           {text}
         </span>
       </Checkbox>
-      <Button type="link" danger onClick={() => deleteTodo(id)}>
-        Delete
+      <Button type="link" onClick={() => deleteTodo(id)}>
+        <DeleteOutlined />
       </Button>
     </li>
   )
