@@ -29,6 +29,7 @@ const createMockContext = (
   deleteTodo: jest.fn(),
   filter: 'all' as Filter,
   setFilter: jest.fn(),
+  itemsLeft: 0,
   ...overrides,
 })
 

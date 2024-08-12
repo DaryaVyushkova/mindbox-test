@@ -10,6 +10,7 @@ import { Todo } from 'Forms/TodoForm'
 
 interface TodoContextType {
   todos: Todo[]
+  itemsLeft: number
   allTodos: Todo[]
   addTodo: (todo: Todo) => void
   toggleTodo: (id: number) => void
@@ -32,6 +33,8 @@ const TodoProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const savedFilter = localStorage.getItem('filter')
     return savedFilter ? JSON.parse(savedFilter) : 'all'
   })
+
+  const itemsLeft = todos.filter((todo: Todo) => !todo.completed).length
 
   const addTodo = (todo: Todo) => {
     setTodos((prev) => [...prev, todo])
@@ -73,6 +76,7 @@ const TodoProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
       value={{
         todos: filteredTodos,
         allTodos: todos,
+        itemsLeft,
         addTodo,
         toggleTodo,
         clearCompleted,

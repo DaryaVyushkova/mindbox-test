@@ -1,5 +1,6 @@
 import React from 'react'
 import { isEmpty } from 'ramda'
+import { Progress } from 'antd'
 
 import { useTodos } from 'context/TodoContext'
 
@@ -9,7 +10,13 @@ import NoDataMessage from 'components/NoDataMessage'
 import './styles.css'
 
 const TodoList: React.FC = () => {
-  const { todos, filter } = useTodos()
+  const { todos, filter, itemsLeft, allTodos } = useTodos()
+  const totalTasks = allTodos?.length
+  const percentCompleted =
+    totalTasks > 0 ? ((totalTasks - itemsLeft) / totalTasks) * 100 : 0
+  const getCompletedTasksMessage = (percent: number | undefined) => {
+    return `${Math.round(percent as number)} % completed (${itemsLeft} task${itemsLeft !== 1 ? 's' : ''} left)`
+  }
 
   if (isEmpty(todos)) {
     let noDataMessage = ''
@@ -28,11 +35,20 @@ const TodoList: React.FC = () => {
   }
 
   return (
-    <ul className="list">
-      {todos.map((todo) => (
-        <TodoItem key={todo.id} {...todo} />
-      ))}
-    </ul>
+    <div>
+      <ul className="list">
+        {todos.map((todo) => (
+          <TodoItem key={todo.id} {...todo} />
+        ))}
+      </ul>
+      <div style={{ marginTop: 16 }}>
+        <Progress
+          type="line"
+          percent={percentCompleted}
+          format={(percent) => getCompletedTasksMessage(percent)}
+        />
+      </div>
+    </div>
   )
 }
 
