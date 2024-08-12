@@ -5,8 +5,8 @@ import Filters from './Filters'
 import { TodoContext, useTodos } from 'context/TodoContext'
 import { Filter } from 'Forms/FilterForm'
 
-jest.mock('../../../context/TodoContext', () => ({
-  ...jest.requireActual('../../../context/TodoContext'),
+jest.mock('context/TodoContext', () => ({
+  ...jest.requireActual('context/TodoContext'),
   useTodos: jest.fn(),
 }))
 
