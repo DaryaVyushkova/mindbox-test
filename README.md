@@ -25,10 +25,11 @@ Once the application is running, you can:
 - View all tasks: All added tasks will be displayed in the list.
 - Filter tasks: You can switch between viewing active and completed tasks.
 ### Also:
-- there is validation for unique values and non-empty field
-- added blocking of delete completed button if there are no suitable tasks
-- added blocking of delete all button if there are no tasks
+- There is validation for unique values and non-empty field
+- Added blocking of delete completed button if there are no suitable tasks
+- Added blocking of delete all button if there are no tasks
 - Added progress bar for completed tasks
+- Data is saved after page reload
 ## Features
 - Adding new tasks
 - Viewing all tasks
