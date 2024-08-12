@@ -7,7 +7,7 @@ https://daryavyushkova.github.io/mindbox-test/
 
 ## Installation
 Clone the repository:
-`git clone https://github.com/your-username/mindbox-test.git`
+`git clone [https://github.com/your-username/mindbox-test.git](https://github.com/DaryaVyushkova/mindbox-test.git)`
 
 Navigate to the project directory:
 `cd mindbox-test`
