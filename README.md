@@ -17,3 +17,16 @@ Install dependencies:
 
 Run the application:
 `npm start`
+
+## Usage
+Once the application is running, you can:
+
+- Add a new task: Enter the task text in the input field and click the "Add" button.
+- View all tasks: All added tasks will be displayed in the list.
+- Filter tasks: You can switch between viewing active and completed tasks.
+- 
+## Features
+- Adding new tasks
+- Viewing all tasks
+- Filtering tasks by status (active/completed)
+- Deleting tasks (if implemented)
