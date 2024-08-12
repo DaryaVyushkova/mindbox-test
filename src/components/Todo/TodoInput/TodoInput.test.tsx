@@ -26,6 +26,7 @@ const createMockContext = (
   toggleTodo: jest.fn(),
   clearCompleted: jest.fn(),
   clearAll: jest.fn(),
+  deleteTodo: jest.fn(),
   filter: 'all' as Filter,
   setFilter: jest.fn(),
   ...overrides,

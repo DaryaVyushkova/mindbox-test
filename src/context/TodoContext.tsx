@@ -15,6 +15,7 @@ interface TodoContextType {
   toggleTodo: (id: number) => void
   clearCompleted: () => void
   clearAll: () => void
+  deleteTodo: (id: number) => void
   filter: Filter
   setFilter: (filter: Filter) => void
 }
@@ -34,6 +35,10 @@ const TodoProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   const addTodo = (todo: Todo) => {
     setTodos((prev) => [...prev, todo])
+  }
+
+  const deleteTodo = (id: number) => {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id))
   }
 
   const toggleTodo = (id: number) => {
@@ -72,6 +77,7 @@ const TodoProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
         toggleTodo,
         clearCompleted,
         clearAll,
+        deleteTodo,
         filter,
         setFilter,
       }}

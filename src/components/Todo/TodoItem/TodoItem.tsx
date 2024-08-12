@@ -1,15 +1,17 @@
 import React from 'react'
-import { Checkbox } from 'antd'
+import { Checkbox, Button } from 'antd'
 
 import { Todo } from 'Forms/TodoForm'
 
 import { useTodos } from 'context/TodoContext'
 
+import './styles.css'
+
 const TodoItem: React.FC<Todo> = ({ id, text, completed }) => {
-  const { toggleTodo } = useTodos()
+  const { toggleTodo, deleteTodo } = useTodos()
 
   return (
-    <li>
+    <li className={'item'}>
       <Checkbox
         type="checkbox"
         checked={completed}
@@ -19,6 +21,9 @@ const TodoItem: React.FC<Todo> = ({ id, text, completed }) => {
           {text}
         </span>
       </Checkbox>
+      <Button type="link" danger onClick={() => deleteTodo(id)}>
+        Delete
+      </Button>
     </li>
   )
 }
