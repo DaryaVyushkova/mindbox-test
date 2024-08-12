@@ -30,3 +30,8 @@ Once the application is running, you can:
 - Viewing all tasks
 - Filtering tasks by status (active/completed)
 - Deleting tasks (if implemented)
+
+
+## Testing
+To run tests, use the command:
+```npm test```
