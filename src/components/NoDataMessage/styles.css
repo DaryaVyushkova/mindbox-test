@@ -1,0 +1,10 @@
+.no-data-message {
+  padding: 16px;
+  text-align: center;
+  color: var(--stoneGray);
+  font-size: 16px;
+  border: 1px solid var(--lightgray);
+  border-radius: var(--border-radius);
+  background-color: var(--whisperGray);
+  margin: 16px 0;
+}
