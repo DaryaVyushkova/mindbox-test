@@ -34,7 +34,7 @@ Once the application is running, you can:
 - Adding new tasks
 - Viewing all tasks
 - Filtering tasks by status (active/completed)
-- Deleting tasks (if implemented)
+- Deleting tasks
 
 
 ## Testing
