@@ -16,8 +16,8 @@ const App: React.FC = () => {
   return (
     <TodoProvider>
       <div className="App">
+        <h1>Todos</h1>
         <Suspense fallback={<Loader />}>
-          <h1>Todos</h1>
           {Object.entries(lazyComponents).map(([name, Component]) => (
             <Component key={name} />
           ))}
