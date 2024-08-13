@@ -54,6 +54,7 @@ To run tests, use the command:
 <img width="891" alt="Снимок экрана 2024-08-13 в 6 41 11 PM" src="https://github.com/user-attachments/assets/0f5f2458-3a63-4ca1-9732-5ed33433b2e0">
 
 
-
+## Piplines 
+<img width="1149" alt="Снимок экрана 2024-08-13 в 7 36 25 PM" src="https://github.com/user-attachments/assets/0a24356c-4453-4726-963a-6b8220010a0d">
 
 
