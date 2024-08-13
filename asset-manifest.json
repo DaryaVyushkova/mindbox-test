@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mindbox-test/static/css/main.59fbc79f.css",
-    "main.js": "/mindbox-test/static/js/main.1a8f2bb8.js",
+    "main.js": "/mindbox-test/static/js/main.99a85158.js",
     "static/css/861.97b0f51a.chunk.css": "/mindbox-test/static/css/861.97b0f51a.chunk.css",
     "static/js/861.4505cde3.chunk.js": "/mindbox-test/static/js/861.4505cde3.chunk.js",
     "static/css/578.f2a0356f.chunk.css": "/mindbox-test/static/css/578.f2a0356f.chunk.css",
@@ -14,7 +14,7 @@
     "static/js/943.5db0ebd9.chunk.js": "/mindbox-test/static/js/943.5db0ebd9.chunk.js",
     "index.html": "/mindbox-test/index.html",
     "main.59fbc79f.css.map": "/mindbox-test/static/css/main.59fbc79f.css.map",
-    "main.1a8f2bb8.js.map": "/mindbox-test/static/js/main.1a8f2bb8.js.map",
+    "main.99a85158.js.map": "/mindbox-test/static/js/main.99a85158.js.map",
     "861.97b0f51a.chunk.css.map": "/mindbox-test/static/css/861.97b0f51a.chunk.css.map",
     "861.4505cde3.chunk.js.map": "/mindbox-test/static/js/861.4505cde3.chunk.js.map",
     "578.f2a0356f.chunk.css.map": "/mindbox-test/static/css/578.f2a0356f.chunk.css.map",
@@ -28,6 +28,6 @@
   },
   "entrypoints": [
     "static/css/main.59fbc79f.css",
-    "static/js/main.1a8f2bb8.js"
+    "static/js/main.99a85158.js"
   ]
 }
