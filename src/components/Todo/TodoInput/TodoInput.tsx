@@ -3,7 +3,8 @@ import { Button, Input, Space } from 'antd'
 
 import { useTodos } from 'context/TodoContext'
 
-import { defaultAttributes, attributesToSubmit } from 'Forms/TodoForm'
+import { defaultAttributes } from 'Types/Todo'
+import { attributesToSubmit } from 'utils/todoSubmission'
 
 import './styles.css'
 

@@ -2,13 +2,13 @@ import React from 'react'
 import { Checkbox, Button } from 'antd'
 import { DeleteOutlined } from '@ant-design/icons'
 
-import { Todo } from 'Forms/TodoForm'
+import { ITodo } from 'Types/Todo'
 
 import { useTodos } from 'context/TodoContext'
 
 import './styles.css'
 
-const TodoItem: React.FC<Todo> = ({ id, text, completed }) => {
+const TodoItem: React.FC<ITodo> = ({ id, text, completed }) => {
   const { toggleTodo, deleteTodo } = useTodos()
 
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Space } from 'antd'
 
-import { Filter } from 'Forms/FilterForm'
+import { Filter, FilterStatus } from 'Types/Filter'
 
 import { useTodos } from 'context/TodoContext'
 
@@ -22,18 +22,21 @@ const Filters: React.FC = () => {
         justifyContent: 'center',
       }}
     >
-      <Button onClick={handleSetFilter('all')} type={getButtonType('all')}>
+      <Button
+        onClick={handleSetFilter(FilterStatus.All)}
+        type={getButtonType(FilterStatus.All)}
+      >
         All
       </Button>
       <Button
-        type={getButtonType('active')}
-        onClick={handleSetFilter('active')}
+        type={getButtonType(FilterStatus.Active)}
+        onClick={handleSetFilter(FilterStatus.Active)}
       >
         Active
       </Button>
       <Button
-        onClick={handleSetFilter('completed')}
-        type={getButtonType('completed')}
+        onClick={handleSetFilter(FilterStatus.Completed)}
+        type={getButtonType(FilterStatus.Completed)}
       >
         Completed
       </Button>

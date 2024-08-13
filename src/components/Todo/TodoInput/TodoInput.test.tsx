@@ -1,13 +1,17 @@
 import React from 'react'
+
 import { render, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import TodoInput from './TodoInput'
-import { TodoContext, useTodos } from 'context/TodoContext'
-import { Filter } from 'Forms/FilterForm'
-import * as TodoForm from 'Forms/TodoForm'
-import { Todo } from 'Forms/TodoForm'
 
-jest.mock('@/Forms/TodoForm', () => ({
+import { TodoContext, useTodos } from 'context/TodoContext'
+
+import { Filter, FilterStatus } from 'Types/Filter'
+import { ITodo } from 'Types/Todo'
+
+import { attributesToSubmit } from 'utils/todoSubmission'
+
+jest.mock('utils/todoSubmission', () => ({
   defaultAttributes: {
     newTodo: '',
     error: '',
@@ -27,7 +31,7 @@ const createMockContext = (
   clearCompleted: jest.fn(),
   clearAll: jest.fn(),
   deleteTodo: jest.fn(),
-  filter: 'all' as Filter,
+  filter: FilterStatus.All as Filter,
   setFilter: jest.fn(),
   itemsLeft: 0,
   ...overrides,
@@ -64,7 +68,7 @@ describe('TodoInput', () => {
       const addButton = screen.getByText('Add')
       fireEvent.click(addButton)
 
-      expect(TodoForm.attributesToSubmit).not.toHaveBeenCalled()
+      expect(attributesToSubmit).not.toHaveBeenCalled()
     })
 
     test('button triggers action when input has text', () => {
@@ -83,7 +87,7 @@ describe('TodoInput', () => {
       fireEvent.change(input, { target: { value: 'New Todo' } })
       fireEvent.click(addButton)
 
-      expect(TodoForm.attributesToSubmit).toHaveBeenCalledWith(
+      expect(attributesToSubmit).toHaveBeenCalledWith(
         'New Todo',
         [],
         mockAddTodo,
@@ -95,7 +99,7 @@ describe('TodoInput', () => {
 
   describe('Input behavior', () => {
     test('input field is cleared after adding a todo', () => {
-      ;(TodoForm.attributesToSubmit as jest.Mock).mockImplementation(
+      ;(attributesToSubmit as jest.Mock).mockImplementation(
         (newTodo, allTodos, addTodo, setError, setNewTodo) => {
           addTodo({ id: 1, text: newTodo, completed: false })
           setNewTodo('')
@@ -118,7 +122,7 @@ describe('TodoInput', () => {
     })
 
     test('adds todo when Enter key is pressed', () => {
-      ;(TodoForm.attributesToSubmit as jest.Mock).mockImplementation(
+      ;(attributesToSubmit as jest.Mock).mockImplementation(
         (newTodo, allTodos, addTodo, setError, setNewTodo) => {
           addTodo({ id: Date.now(), text: newTodo, completed: false })
           setNewTodo('')
@@ -136,20 +140,20 @@ describe('TodoInput', () => {
       fireEvent.change(input, { target: { value: 'New Todo' } })
       fireEvent.keyDown(input, { key: 'Enter', code: 'Enter', charCode: 13 })
 
-      expect(TodoForm.attributesToSubmit).toHaveBeenCalled()
+      expect(attributesToSubmit).toHaveBeenCalled()
     })
   })
 
   describe('Error handling', () => {
     test('displays error message when trying to add a duplicate todo', () => {
-      const existingTodo: Todo = {
+      const existingTodo: ITodo = {
         id: 1,
         text: 'Existing Todo',
         completed: false,
       }
-      ;(TodoForm.attributesToSubmit as jest.Mock).mockImplementation(
+      ;(attributesToSubmit as jest.Mock).mockImplementation(
         (newTodo, allTodos, addTodo, setError, setNewTodo) => {
-          if (allTodos.some((todo: Todo) => todo.text === newTodo)) {
+          if (allTodos.some((todo: ITodo) => todo.text === newTodo)) {
             setError('This todo already exists!')
           } else {
             addTodo({ id: Date.now(), text: newTodo, completed: false })

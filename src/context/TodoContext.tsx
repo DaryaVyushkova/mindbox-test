@@ -5,14 +5,14 @@ import React, {
   useContext,
   useEffect,
 } from 'react'
-import { Filter } from 'Forms/FilterForm'
-import { Todo } from 'Forms/TodoForm'
+import { Filter, FilterStatus } from 'Types/Filter'
+import { ITodo } from 'Types/Todo'
 
-interface TodoContextType {
-  todos: Todo[]
+export interface TodoContextType {
+  todos: ITodo[]
   itemsLeft: number
-  allTodos: Todo[]
-  addTodo: (todo: Todo) => void
+  allTodos: ITodo[]
+  addTodo: (todo: ITodo) => void
   toggleTodo: (id: number) => void
   clearCompleted: () => void
   clearAll: () => void
@@ -24,19 +24,19 @@ interface TodoContextType {
 export const TodoContext = createContext<TodoContextType | undefined>(undefined)
 
 const TodoProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [todos, setTodos] = useState<Todo[]>(() => {
+  const [todos, setTodos] = useState<ITodo[]>(() => {
     const savedTodos = localStorage.getItem('todos')
     return savedTodos ? JSON.parse(savedTodos) : []
   })
 
   const [filter, setFilter] = useState<Filter>(() => {
     const savedFilter = localStorage.getItem('filter')
-    return savedFilter ? JSON.parse(savedFilter) : 'all'
+    return savedFilter ? JSON.parse(savedFilter) : FilterStatus.All
   })
 
-  const itemsLeft = todos.filter((todo: Todo) => !todo.completed).length
+  const itemsLeft = todos.filter((todo: ITodo) => !todo.completed).length
 
-  const addTodo = (todo: Todo) => {
+  const addTodo = (todo: ITodo) => {
     setTodos((prev) => [...prev, todo])
   }
 
@@ -65,9 +65,9 @@ const TodoProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   }, [todos, filter])
 
   const filteredTodos = todos.filter((todo) => {
-    if (filter === 'all') return true
-    if (filter === 'active') return !todo.completed
-    if (filter === 'completed') return todo.completed
+    if (filter === FilterStatus.All) return true
+    if (filter === FilterStatus.Active) return !todo.completed
+    if (filter === FilterStatus.Completed) return todo.completed
     return true
   })
 

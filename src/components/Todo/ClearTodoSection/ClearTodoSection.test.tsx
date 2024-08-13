@@ -1,13 +1,13 @@
 import React from 'react'
-
 import { render, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
 import ClearTodoSection from 'components/Todo/ClearTodoSection'
 
-import { TodoContext, useTodos } from 'context/TodoContext'
+import { TodoContext, TodoContextType, useTodos } from 'context/TodoContext'
 
-import { Todo } from 'Forms/TodoForm'
+import { ITodo } from 'Types/Todo'
+import { Filter, FilterStatus } from 'Types/Filter'
 
 jest.mock('context/TodoContext', () => ({
   ...jest.requireActual('context/TodoContext'),
@@ -18,23 +18,26 @@ describe('ClearTodoSection', () => {
   const mockClearCompleted = jest.fn()
   const mockClearAll = jest.fn()
 
-  const renderWithContext = (todos: Todo[]) => {
-    ;(useTodos as jest.Mock).mockReturnValue({
+  const renderWithContext = (todos: ITodo[]) => {
+    const mockContextValue: TodoContextType = {
       todos,
+      itemsLeft: todos.filter((todo) => !todo.completed).length,
+      allTodos: todos,
+      addTodo: jest.fn(),
+      toggleTodo: jest.fn(),
       clearCompleted: mockClearCompleted,
       clearAll: mockClearAll,
-    })
+      deleteTodo: jest.fn(),
+      filter: FilterStatus.All as Filter,
+      setFilter: jest.fn(),
+    }
+
+    ;(useTodos as jest.MockedFunction<typeof useTodos>).mockReturnValue(
+      mockContextValue
+    )
 
     return render(
-      <TodoContext.Provider
-        value={
-          {
-            todos,
-            clearCompleted: mockClearCompleted,
-            clearAll: mockClearAll,
-          } as any
-        }
-      >
+      <TodoContext.Provider value={mockContextValue}>
         <ClearTodoSection />
       </TodoContext.Provider>
     )

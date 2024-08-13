@@ -6,7 +6,9 @@ import TodoList from 'components/Todo/TodoList'
 
 import * as TodoContextModule from 'context/TodoContext'
 
-import { Todo } from 'Forms/TodoForm'
+import { ITodo } from 'Types/Todo'
+import { FilterStatus } from 'Types/Filter'
+import { TodoContextType } from 'context/TodoContext'
 
 jest.mock('context/TodoContext', () => ({
   ...jest.requireActual('context/TodoContext'),
@@ -21,26 +23,40 @@ jest.mock('components/Todo/TodoItem', () => {
 
 jest.mock('components/NoDataMessage', () => {
   return function MockNoDataMessage({ message }: { message: string }) {
-    return <div>{message}</div>
+    return <div data-testid="no-data-message">{message}</div>
   }
 })
 
 describe('TodoList', () => {
-  const mockTodos: Todo[] = [
+  const mockTodos: ITodo[] = [
     { id: 1, text: 'Task 1', completed: false },
     { id: 2, text: 'Task 2', completed: true },
   ]
 
   const renderWithContext = (
-    todos: Todo[],
-    filter: 'all' | 'active' | 'completed' = 'all'
+    todos: ITodo[],
+    filter: FilterStatus = FilterStatus.All
   ) => {
-    ;(TodoContextModule.useTodos as jest.Mock).mockReturnValue({
+    const allTodos = todos
+    const itemsLeft = todos.filter((todo) => !todo.completed).length
+    const mockContextValue: TodoContextType = {
       todos,
+      allTodos,
+      itemsLeft,
       filter,
-    })
+      toggleTodo: jest.fn(),
+      deleteTodo: jest.fn(),
+      clearCompleted: jest.fn(),
+      clearAll: jest.fn(),
+      setFilter: jest.fn(),
+      addTodo: jest.fn(), // Добавьте это свойство
+    }
+
+    console.log('Mock context value:', mockContextValue)
+    ;(TodoContextModule.useTodos as jest.Mock).mockReturnValue(mockContextValue)
+
     return render(
-      <TodoContextModule.TodoContext.Provider value={{ todos, filter } as any}>
+      <TodoContextModule.TodoContext.Provider value={mockContextValue}>
         <TodoList />
       </TodoContextModule.TodoContext.Provider>
     )
@@ -53,19 +69,19 @@ describe('TodoList', () => {
   })
 
   test('renders "Tasks have not yet been added" message when no todos and filter is all', () => {
-    renderWithContext([], 'all')
+    renderWithContext([], FilterStatus.All)
     expect(
       screen.getByText('Tasks have not yet been added')
     ).toBeInTheDocument()
   })
 
   test('renders "There are no active tasks" message when no todos and filter is active', () => {
-    renderWithContext([], 'active')
+    renderWithContext([], FilterStatus.Active)
     expect(screen.getByText('There are no active tasks')).toBeInTheDocument()
   })
 
   test('renders "There are no completed tasks" message when no todos and filter is completed', () => {
-    renderWithContext([], 'completed')
+    renderWithContext([], FilterStatus.Completed)
     expect(screen.getByText('There are no completed tasks')).toBeInTheDocument()
   })
 
@@ -86,5 +102,23 @@ describe('TodoList', () => {
     expect(
       screen.queryByText('There are no completed tasks')
     ).not.toBeInTheDocument()
+  })
+
+  test('displays correct message when there are no tasks', () => {
+    renderWithContext([])
+    const noTodosMessage = screen.getByTestId('no-data-message')
+    expect(noTodosMessage).toHaveTextContent('Tasks have not yet been added')
+  })
+
+  test('displays correct message when there are no active tasks', () => {
+    renderWithContext([], FilterStatus.Active)
+    const noTodosMessage = screen.getByTestId('no-data-message')
+    expect(noTodosMessage).toHaveTextContent('There are no active tasks')
+  })
+
+  test('displays correct message when there are no completed tasks', () => {
+    renderWithContext([], FilterStatus.Completed)
+    const noTodosMessage = screen.getByTestId('no-data-message')
+    expect(noTodosMessage).toHaveTextContent('There are no completed tasks')
   })
 })

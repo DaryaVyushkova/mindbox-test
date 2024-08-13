@@ -15,9 +15,13 @@ const config: Config = {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^context/(.*)$': '<rootDir>/src/context/$1',
     '^components/(.*)$': '<rootDir>/src/components/$1',
-    '^Forms/(.*)$': '<rootDir>/src/Forms/$1',
+    '^Types/(.*)$': '<rootDir>/src/Types/$1',
+    '^utils/(.*)$': '<rootDir>/src/utils/$1',
     '\\.(css|less|scss|sass)$': '<rootDir>/__mocks__/styleMock.js',
   },
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageReporters: ['text', 'lcov'],
 }
 
 export default config
