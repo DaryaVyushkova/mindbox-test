@@ -1,13 +1,33 @@
 {
   "files": {
-    "main.css": "/mindbox-test/static/css/main.060db255.css",
-    "main.js": "/mindbox-test/static/js/main.2360e65d.js",
+    "main.css": "/mindbox-test/static/css/main.59fbc79f.css",
+    "main.js": "/mindbox-test/static/js/main.1a8f2bb8.js",
+    "static/css/861.97b0f51a.chunk.css": "/mindbox-test/static/css/861.97b0f51a.chunk.css",
+    "static/js/861.4505cde3.chunk.js": "/mindbox-test/static/js/861.4505cde3.chunk.js",
+    "static/css/578.f2a0356f.chunk.css": "/mindbox-test/static/css/578.f2a0356f.chunk.css",
+    "static/js/578.2494b2fb.chunk.js": "/mindbox-test/static/js/578.2494b2fb.chunk.js",
+    "static/js/618.3e20bdca.chunk.js": "/mindbox-test/static/js/618.3e20bdca.chunk.js",
+    "static/js/488.b46f4ff1.chunk.js": "/mindbox-test/static/js/488.b46f4ff1.chunk.js",
+    "static/js/433.6b831717.chunk.js": "/mindbox-test/static/js/433.6b831717.chunk.js",
+    "static/js/239.60d8471b.chunk.js": "/mindbox-test/static/js/239.60d8471b.chunk.js",
+    "static/js/681.a0d235a6.chunk.js": "/mindbox-test/static/js/681.a0d235a6.chunk.js",
+    "static/js/943.5db0ebd9.chunk.js": "/mindbox-test/static/js/943.5db0ebd9.chunk.js",
     "index.html": "/mindbox-test/index.html",
-    "main.060db255.css.map": "/mindbox-test/static/css/main.060db255.css.map",
-    "main.2360e65d.js.map": "/mindbox-test/static/js/main.2360e65d.js.map"
+    "main.59fbc79f.css.map": "/mindbox-test/static/css/main.59fbc79f.css.map",
+    "main.1a8f2bb8.js.map": "/mindbox-test/static/js/main.1a8f2bb8.js.map",
+    "861.97b0f51a.chunk.css.map": "/mindbox-test/static/css/861.97b0f51a.chunk.css.map",
+    "861.4505cde3.chunk.js.map": "/mindbox-test/static/js/861.4505cde3.chunk.js.map",
+    "578.f2a0356f.chunk.css.map": "/mindbox-test/static/css/578.f2a0356f.chunk.css.map",
+    "578.2494b2fb.chunk.js.map": "/mindbox-test/static/js/578.2494b2fb.chunk.js.map",
+    "618.3e20bdca.chunk.js.map": "/mindbox-test/static/js/618.3e20bdca.chunk.js.map",
+    "488.b46f4ff1.chunk.js.map": "/mindbox-test/static/js/488.b46f4ff1.chunk.js.map",
+    "433.6b831717.chunk.js.map": "/mindbox-test/static/js/433.6b831717.chunk.js.map",
+    "239.60d8471b.chunk.js.map": "/mindbox-test/static/js/239.60d8471b.chunk.js.map",
+    "681.a0d235a6.chunk.js.map": "/mindbox-test/static/js/681.a0d235a6.chunk.js.map",
+    "943.5db0ebd9.chunk.js.map": "/mindbox-test/static/js/943.5db0ebd9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.060db255.css",
-    "static/js/main.2360e65d.js"
+    "static/css/main.59fbc79f.css",
+    "static/js/main.1a8f2bb8.js"
   ]
 }

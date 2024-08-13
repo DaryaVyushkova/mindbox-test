@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/861.97b0f51a.chunk.css","mappings":"AAAA,cAIE,gBAAiB,CAFjB,cAAe,CADf,UAAW,CAEX,gBAEF","sources":["components/Todo/TodoInput/styles.css"],"sourcesContent":[".errorMessage {\n  margin: 4px;\n  font-size: 10px;\n  text-align: start;\n  color: var(--red);\n}"],"names":[],"sourceRoot":""}
