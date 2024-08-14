@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/mindbox-test/static/css/main.59fbc79f.css",
-    "main.js": "/mindbox-test/static/js/main.476cb025.js",
+    "main.js": "/mindbox-test/static/js/main.df0b1bde.js",
     "static/css/745.b9fa9043.chunk.css": "/mindbox-test/static/css/745.b9fa9043.chunk.css",
-    "static/js/745.0033cff1.chunk.js": "/mindbox-test/static/js/745.0033cff1.chunk.js",
+    "static/js/745.a4216263.chunk.js": "/mindbox-test/static/js/745.a4216263.chunk.js",
     "static/css/578.f2a0356f.chunk.css": "/mindbox-test/static/css/578.f2a0356f.chunk.css",
     "static/js/578.2494b2fb.chunk.js": "/mindbox-test/static/js/578.2494b2fb.chunk.js",
     "static/js/618.340bbe6e.chunk.js": "/mindbox-test/static/js/618.340bbe6e.chunk.js",
@@ -14,9 +14,9 @@
     "static/js/943.5db0ebd9.chunk.js": "/mindbox-test/static/js/943.5db0ebd9.chunk.js",
     "index.html": "/mindbox-test/index.html",
     "main.59fbc79f.css.map": "/mindbox-test/static/css/main.59fbc79f.css.map",
-    "main.476cb025.js.map": "/mindbox-test/static/js/main.476cb025.js.map",
+    "main.df0b1bde.js.map": "/mindbox-test/static/js/main.df0b1bde.js.map",
     "745.b9fa9043.chunk.css.map": "/mindbox-test/static/css/745.b9fa9043.chunk.css.map",
-    "745.0033cff1.chunk.js.map": "/mindbox-test/static/js/745.0033cff1.chunk.js.map",
+    "745.a4216263.chunk.js.map": "/mindbox-test/static/js/745.a4216263.chunk.js.map",
     "578.f2a0356f.chunk.css.map": "/mindbox-test/static/css/578.f2a0356f.chunk.css.map",
     "578.2494b2fb.chunk.js.map": "/mindbox-test/static/js/578.2494b2fb.chunk.js.map",
     "618.340bbe6e.chunk.js.map": "/mindbox-test/static/js/618.340bbe6e.chunk.js.map",
@@ -28,6 +28,6 @@
   },
   "entrypoints": [
     "static/css/main.59fbc79f.css",
-    "static/js/main.476cb025.js"
+    "static/js/main.df0b1bde.js"
   ]
 }
