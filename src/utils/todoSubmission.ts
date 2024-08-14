@@ -1,7 +1,7 @@
 import { validateTodo } from 'utils/todoValidation'
 import { ITodo } from 'Types/Todo'
 
-export const attributesToSubmit = (
+export const submitTodoAttributes = (
   newTodo: string,
   allTodos: ITodo[],
   addTodo: (todo: ITodo) => void,

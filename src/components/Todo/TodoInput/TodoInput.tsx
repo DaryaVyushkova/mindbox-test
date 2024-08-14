@@ -4,7 +4,7 @@ import { Button, Input, Space } from 'antd'
 import { useTodos } from 'context/TodoContext'
 
 import { defaultAttributes } from 'Types/Todo'
-import { attributesToSubmit } from 'utils/todoSubmission'
+import { submitTodoAttributes } from 'utils/todoSubmission'
 
 import './styles.css'
 
@@ -19,7 +19,13 @@ const TodoInput: React.FC = () => {
   }
 
   const handleAddTodo = () => {
-    attributesToSubmit(newTodo, allTodos, addTodo, setError, setNewTodo)
+    window.gtag('event', 'add_todo', {
+      event_category: 'Todo',
+      event_label: newTodo,
+      value: 1,
+    })
+
+    submitTodoAttributes(newTodo, allTodos, addTodo, setError, setNewTodo)
   }
 
   return (
