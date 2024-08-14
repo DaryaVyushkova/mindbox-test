@@ -2,7 +2,6 @@
   "name": "todo-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://daryavyushkova.github.io/mindbox-test/",
   "dependencies": {
     "@ant-design/icons": "^5.4.0",
     "@types/node": "^16.18.105",
@@ -20,7 +19,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "gh-pages -d build",
     "test": "jest",
     "eject": "react-scripts eject",
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
@@ -64,7 +62,6 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "gh-pages": "^6.1.1",
     "html-webpack-plugin": "^5.6.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
