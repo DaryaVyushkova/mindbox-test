@@ -42,7 +42,7 @@ To run tests, use the command:
 ```npm test```
 
 ## screenshots
-<img width="757" alt="Снимок экрана 2024-08-13 в 3 03 54 PM" src="https://github.com/user-attachments/assets/5303aad4-1f0b-4aa2-8a29-138d51b952d9">
+<img width="719" alt="Снимок экрана 2024-08-13 в 8 14 29 PM" src="https://github.com/user-attachments/assets/650f4f9b-6e7c-4394-887a-7f8ec7c1fc77">
 <img width="757" alt="Снимок экрана 2024-08-13 в 3 07 17 PM" src="https://github.com/user-attachments/assets/1dba47b0-6707-4221-94ca-c0a9298917e0">
 <img width="757" alt="Снимок экрана 2024-08-13 в 3 04 14 PM" src="https://github.com/user-attachments/assets/abc76572-fd0c-49d0-a8eb-4f940b50e2c4">
 <img width="757" alt="Снимок экрана 2024-08-13 в 3 04 32 PM" src="https://github.com/user-attachments/assets/328156ac-7b51-44d9-95f2-3490c00d87aa">
