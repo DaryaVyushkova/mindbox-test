@@ -14,8 +14,9 @@ const config: Config = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^context/(.*)$': '<rootDir>/src/context/$1',
-    '^components/(.*)$': '<rootDir>/src/components/$1',
+    '^shared/(.*)$': '<rootDir>/src/shared/$1',
     '^Types/(.*)$': '<rootDir>/src/Types/$1',
+    '^features/(.*)$': '<rootDir>/src/features/$1',
     '^utils/(.*)$': '<rootDir>/src/utils/$1',
     '\\.(css|less|scss|sass)$': '<rootDir>/__mocks__/styleMock.js',
   },

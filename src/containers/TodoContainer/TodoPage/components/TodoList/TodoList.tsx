@@ -4,8 +4,8 @@ import { Progress } from 'antd'
 
 import { useTodos } from 'context/TodoContext'
 
-import TodoItem from 'components/Todo/TodoItem'
-import NoDataMessage from 'components/NoDataMessage'
+import TodoItem from './components/TodoItem'
+import NoDataMessage from 'shared/components/NoDataMessage'
 
 import './styles.css'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Space } from 'antd'
 
-import { Filter, FilterStatus } from 'Types/Filter'
+import { Filter, FilterStatus } from 'features/todo/model/types/Filter'
 
 import { useTodos } from 'context/TodoContext'
 

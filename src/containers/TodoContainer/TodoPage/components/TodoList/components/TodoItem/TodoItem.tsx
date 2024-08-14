@@ -2,7 +2,7 @@ import React from 'react'
 import { Checkbox, Button } from 'antd'
 import { DeleteOutlined } from '@ant-design/icons'
 
-import { ITodo } from 'Types/Todo'
+import { ITodo } from 'features/todo/model/Todo'
 
 import { useTodos } from 'context/TodoContext'
 

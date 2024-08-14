@@ -1,4 +1,4 @@
-import { ITodo } from 'Types/Todo'
+import { ITodo } from 'features/todo/model/Todo'
 
 export const validateTodo = (newTodo: string, allTodos: ITodo[]): string => {
   if (!newTodo.trim()) {

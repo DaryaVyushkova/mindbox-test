@@ -1,27 +1,27 @@
 import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import App from './App'
+import TodoPage from './TodoPage'
 
-jest.mock('components/Todo/TodoInput', () => {
+jest.mock('./components/TodoInput', () => {
   const MockTodoInput = () => <div data-testid="todo-input">TodoInput</div>
   MockTodoInput.displayName = 'MockTodoInput'
   return MockTodoInput
 })
 
-jest.mock('components/Todo/TodoList', () => {
+jest.mock('./components/TodoList', () => {
   const MockTodoList = () => <div data-testid="todo-list">TodoList</div>
   MockTodoList.displayName = 'MockTodoList'
   return MockTodoList
 })
 
-jest.mock('components/Todo/Filters', () => {
+jest.mock('./components/Filters', () => {
   const MockFilters = () => <div data-testid="filters">Filters</div>
   MockFilters.displayName = 'MockFilters'
   return MockFilters
 })
 
-jest.mock('components/Todo/ClearTodoSection', () => {
+jest.mock('./components/ClearTodoSection', () => {
   const MockClearTodoSection = () => (
     <div data-testid="clear-todo-section">ClearTodoSection</div>
   )
@@ -29,7 +29,7 @@ jest.mock('components/Todo/ClearTodoSection', () => {
   return MockClearTodoSection
 })
 
-jest.mock('./components/Loader', () => {
+jest.mock('shared/components/Loader', () => {
   const MockLoader = () => <div data-testid="loader">Loading...</div>
   MockLoader.displayName = 'MockLoader'
   return MockLoader
@@ -37,7 +37,7 @@ jest.mock('./components/Loader', () => {
 
 describe('App', () => {
   test('renders all components and title', async () => {
-    render(<App />)
+    render(<TodoPage />)
 
     expect(screen.getByText('Todos')).toBeInTheDocument()
     expect(screen.getByTestId('loader')).toBeInTheDocument()
@@ -52,7 +52,7 @@ describe('App', () => {
   })
 
   test('TodoProvider wraps the application', () => {
-    const { container } = render(<App />)
+    const { container } = render(<TodoPage />)
     expect(container.firstChild).toHaveClass('App')
   })
 })

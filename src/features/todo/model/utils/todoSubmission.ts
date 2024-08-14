@@ -1,5 +1,5 @@
-import { validateTodo } from 'utils/todoValidation'
-import { ITodo } from 'Types/Todo'
+import { validateTodo } from 'features/todo/model/utils/todoValidation'
+import { ITodo } from 'features/todo/model/Todo'
 
 export const submitTodoAttributes = (
   newTodo: string,

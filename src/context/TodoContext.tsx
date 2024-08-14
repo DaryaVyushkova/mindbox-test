@@ -5,8 +5,8 @@ import React, {
   useContext,
   useEffect,
 } from 'react'
-import { Filter, FilterStatus } from 'Types/Filter'
-import { ITodo } from 'Types/Todo'
+import { Filter, FilterStatus } from 'features/todo/model/types/Filter'
+import { ITodo } from 'features/todo/model/Todo'
 
 export interface TodoContextType {
   todos: ITodo[]

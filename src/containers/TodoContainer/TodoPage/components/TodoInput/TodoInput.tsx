@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Button, Input, Space } from 'antd'
 
 import { useTodos } from 'context/TodoContext'
-import { defaultAttributes } from 'Types/Todo'
-import { submitTodoAttributes } from 'utils/todoSubmission'
-import { ITodo } from 'Types/Todo'
+import { defaultAttributes } from 'features/todo/model/Todo'
+import { submitTodoAttributes } from 'features/todo/model/utils/todoSubmission'
+import { ITodo } from 'features/todo/model/Todo'
 
 import './styles.css'
 
