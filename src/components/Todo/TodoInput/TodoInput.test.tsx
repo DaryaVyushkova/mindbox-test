@@ -40,6 +40,7 @@ const createMockContext = (
 describe('TodoInput', () => {
   beforeEach(() => {
     jest.clearAllMocks()
+    window.gtag = jest.fn()
   })
 
   describe('Rendering', () => {
@@ -94,6 +95,11 @@ describe('TodoInput', () => {
         expect.any(Function),
         expect.any(Function)
       )
+      expect(window.gtag).toHaveBeenCalledWith(
+        'event',
+        'add_todo',
+        expect.any(Object)
+      )
     })
   })
 
@@ -119,6 +125,11 @@ describe('TodoInput', () => {
       fireEvent.click(addButton)
 
       expect(input).toHaveValue('')
+      expect(window.gtag).toHaveBeenCalledWith(
+        'event',
+        'add_todo',
+        expect.any(Object)
+      )
     })
 
     test('adds todo when Enter key is pressed', () => {
@@ -141,6 +152,11 @@ describe('TodoInput', () => {
       fireEvent.keyDown(input, { key: 'Enter', code: 'Enter', charCode: 13 })
 
       expect(submitTodoAttributes).toHaveBeenCalled()
+      expect(window.gtag).toHaveBeenCalledWith(
+        'event',
+        'add_todo',
+        expect.any(Object)
+      )
     })
   })
 
@@ -181,6 +197,11 @@ describe('TodoInput', () => {
 
       expect(screen.getByText('This todo already exists!')).toBeInTheDocument()
       expect(input).toHaveValue('Existing Todo')
+      expect(window.gtag).toHaveBeenCalledWith(
+        'event',
+        'add_todo',
+        expect.any(Object)
+      )
     })
   })
 })
