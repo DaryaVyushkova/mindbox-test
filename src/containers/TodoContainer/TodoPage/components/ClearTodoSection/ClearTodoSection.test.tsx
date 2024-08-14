@@ -2,12 +2,12 @@ import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import ClearTodoSection from 'components/Todo/ClearTodoSection'
+import ClearTodoSection from './ClearTodoSection'
 
 import { TodoContext, TodoContextType, useTodos } from 'context/TodoContext'
 
-import { ITodo } from 'Types/Todo'
-import { Filter, FilterStatus } from 'Types/Filter'
+import { ITodo } from 'features/todo/model/Todo'
+import { Filter, FilterStatus } from 'features/todo/model/types/Filter'
 
 jest.mock('context/TodoContext', () => ({
   ...jest.requireActual('context/TodoContext'),

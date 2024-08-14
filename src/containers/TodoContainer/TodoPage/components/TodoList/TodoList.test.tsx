@@ -2,12 +2,12 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import TodoList from 'components/Todo/TodoList'
+import TodoList from './TodoList'
 
 import * as TodoContextModule from 'context/TodoContext'
 
-import { ITodo } from 'Types/Todo'
-import { FilterStatus } from 'Types/Filter'
+import { ITodo } from 'features/todo/model/Todo'
+import { FilterStatus } from 'features/todo/model/types/Filter'
 import { TodoContextType } from 'context/TodoContext'
 
 jest.mock('context/TodoContext', () => ({
@@ -15,13 +15,13 @@ jest.mock('context/TodoContext', () => ({
   useTodos: jest.fn(),
 }))
 
-jest.mock('components/Todo/TodoItem', () => {
+jest.mock('./components/TodoItem', () => {
   return function MockTodoItem({ text }: { text: string }) {
     return <li>{text}</li>
   }
 })
 
-jest.mock('components/NoDataMessage', () => {
+jest.mock('shared/components/NoDataMessage', () => {
   return function MockNoDataMessage({ message }: { message: string }) {
     return <div data-testid="no-data-message">{message}</div>
   }

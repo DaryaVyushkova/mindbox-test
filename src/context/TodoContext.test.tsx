@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react'
 import { TodoProvider, useTodos } from './TodoContext'
-import { FilterStatus } from 'Types/Filter'
+import { FilterStatus } from 'features/todo/model/types/Filter'
 
 const localStorageMock = (() => {
   let store: { [key: string]: string } = {}

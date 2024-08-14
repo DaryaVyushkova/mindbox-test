@@ -6,12 +6,12 @@ import TodoInput from './TodoInput'
 
 import { TodoContext, useTodos } from 'context/TodoContext'
 
-import { Filter, FilterStatus } from 'Types/Filter'
-import { ITodo } from 'Types/Todo'
+import { Filter, FilterStatus } from 'features/todo/model/types/Filter'
+import { ITodo } from 'features/todo/model/Todo'
 
-import { submitTodoAttributes } from 'utils/todoSubmission'
+import { submitTodoAttributes } from 'features/todo/model/utils/todoSubmission'
 
-jest.mock('utils/todoSubmission', () => ({
+jest.mock('features/todo/model/utils/todoSubmission', () => ({
   defaultAttributes: {
     newTodo: '',
     error: '',

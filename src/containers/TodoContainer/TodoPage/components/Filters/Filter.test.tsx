@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Filters from './Filters'
 import { TodoContext, TodoContextType, useTodos } from 'context/TodoContext'
-import { Filter, FilterStatus } from 'Types/Filter'
+import { Filter, FilterStatus } from 'features/todo/model/types/Filter'
 
 jest.mock('context/TodoContext', () => ({
   ...jest.requireActual('context/TodoContext'),
@@ -14,8 +14,8 @@ const mockGetButtonType = jest.fn((filterValue: Filter) =>
   filterValue === FilterStatus.Active ? 'primary' : 'default'
 )
 
-jest.mock('Types/Todo', () => {
-  const OriginalFilters = jest.requireActual('Forms/Todo').default
+jest.mock('features/todo/model/Todo', () => {
+  const OriginalFilters = jest.requireActual('features/todo/model/Todo').default
   return function MockedFilters(props: React.ComponentProps<typeof Filters>) {
     return <OriginalFilters {...props} getButtonType={mockGetButtonType} />
   }
