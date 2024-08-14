@@ -5,6 +5,8 @@ This is a simple ToDo application built with TypeScript, React, and React Hooks.
 ## DEMO
 https://main--mindbox-test-dl.netlify.app/
 
+https://daryavyushkova.github.io/mindbox-test/
+
 ## Installation
 Clone the repository:
 `git clone https://github.com/DaryaVyushkova/mindbox-test.git`
