@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import { Button, Input, Space } from 'antd'
 
 import { useTodos } from 'context/TodoContext'
-
 import { defaultAttributes } from 'Types/Todo'
 import { submitTodoAttributes } from 'utils/todoSubmission'
+import { ITodo } from 'Types/Todo'
 
 import './styles.css'
 
 const TodoInput: React.FC = () => {
-  const [newTodo, setNewTodo] = useState(defaultAttributes.newTodo)
-  const [error, setError] = useState(defaultAttributes.error)
+  const [newTodo, setNewTodo] = useState<string>(defaultAttributes.newTodo)
+  const [error, setError] = useState<string>(defaultAttributes.error)
   const { addTodo, todos: allTodos } = useTodos()
 
   const handleFieldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,13 +19,21 @@ const TodoInput: React.FC = () => {
   }
 
   const handleAddTodo = () => {
+    const todoToAdd: ITodo = {
+      id: Date.now(),
+      text: newTodo,
+      completed: false,
+    }
+
     window.gtag('event', 'add_todo', {
       event_category: 'Todo',
-      event_label: newTodo,
+      event_label: JSON.stringify(todoToAdd),
       value: 1,
     })
 
-    submitTodoAttributes(newTodo, allTodos, addTodo, setError, setNewTodo)
+    submitTodoAttributes(newTodo, allTodos, addTodo, setError, () =>
+      setNewTodo('')
+    )
   }
 
   return (
