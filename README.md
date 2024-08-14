@@ -30,6 +30,10 @@ Once the application is running, you can:
 - Added blocking of delete all button if there are no tasks
 - Added progress bar for completed tasks
 - Data is saved after page reload
+
+- Added CI/CD
+- Added Google analitics
+
 ## Features
 - Adding new tasks
 - Viewing all tasks
