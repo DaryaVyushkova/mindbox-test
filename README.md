@@ -54,6 +54,10 @@ To run tests, use the command:
 ## Website performance
 <img width="1006" alt="Снимок экрана 2024-08-13 в 3 01 23 PM" src="https://github.com/user-attachments/assets/b09e41b6-65ae-480d-bf32-36f65ddf67c1">
 
+## Added Google Analitics
+<img width="1493" alt="Снимок экрана 2024-08-13 в 10 03 09 PM" src="https://github.com/user-attachments/assets/3380647d-7dd3-4683-b426-365818b1c42a">
+<img width="408" alt="Снимок экрана 2024-08-13 в 10 24 16 PM" src="https://github.com/user-attachments/assets/bc010c36-3273-4dd1-a981-010f8a4c07d6">
+
 ## Test Coverage
 <img width="891" alt="Снимок экрана 2024-08-13 в 6 41 11 PM" src="https://github.com/user-attachments/assets/0f5f2458-3a63-4ca1-9732-5ed33433b2e0">
 
